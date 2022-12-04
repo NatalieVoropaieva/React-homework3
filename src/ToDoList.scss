@@ -1,0 +1,181 @@
+body{
+  padding: 20px;
+}
+.ToDoListContainer{
+  width: 600px;
+  height: 700px;
+  border: #00755E solid 2px;
+  border-radius: 10px;
+  display:flex;
+  flex-direction: column;
+}
+.FilterByStatus, .FilterByTime{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: #00755E solid 2px;
+  cursor: pointer;
+  .active {
+    border-bottom: #00755E solid 2px;
+  }
+  .inactive{
+    border-bottom: transparent solid 2px;
+  }
+}
+.FilterByTime {
+  .EditTime, .CreateTime {
+    &.asc {
+      &:before {
+        display: inline-block;
+        content: "➤";
+        transform: rotate(-90deg);
+      }
+    }
+    &.desc {
+      &:before {
+        display: inline-block;
+        content: "➤";
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+.ToDoList{
+  flex-grow: 1;
+  overflow: auto;
+}
+.AddNew{
+  color: #00755E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 36px;
+  border-top: #00755E solid 2px;
+  cursor: pointer;
+ text-align: center;
+}
+
+.todo-item-container {
+  overflow: hidden;
+  transition: max-height .3s ease-out;
+  max-height: 55px;
+  padding-bottom: 5px;
+  border-bottom: dimgray solid 1px;
+  margin: 16px 0;
+}
+.todo-item-container.open {
+  max-height: 200px;
+}
+.todo-item-main {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit-btn, .delete-btn {
+  height: 20px;
+  cursor: pointer;
+}
+.edit-btn img, .delete-btn img {
+  height: 100%;
+}
+.creation-date, .update-date{
+  font-size: 11px;
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  line-height: 22.5px;
+}
+.todo-item-main .open{
+  border-radius: 8px;
+  border: red solid 4px;
+  height: 20px;
+  width: 20px;
+}
+.todo-item-main .done{
+  border-radius: 8px;
+  border: #00755E solid 4px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-item-main .pending{
+  border-radius: 8px;
+  border: yellow solid 4px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul{
+  padding: 0 20px;
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+.save-button{
+  border: #00755E solid 1px;
+  color: #00755E;
+}
+.save-button, .cancel-button{
+  padding: 6px;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 100px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.save-button:hover, .cancel-button:hover{
+  opacity: 0.9;
+}
+.cancel-button{
+  border: darkred solid 1px;
+  color: darkred;
+}
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+
+}
+li .form{
+  margin: 0;
+}
+.input{
+  width: 100%;
+  margin: 7px 0;
+  font-size: 16px;
+  outline: none;
+  border: dimgray solid 1px;
+  border-radius: 5px;
+  resize: none;
+  min-height: 20px;
+  height: auto;
+}
+.title{
+  cursor: pointer;
+}
+.description{
+  cursor: default;
+}
+.done .figure:before{
+  content: '✓';
+  font-size: 20px;
+  font-weight: bold;
+  color: #00755E;
+}
+
+.pending .figure:before{
+  content: '↻';
+  font-size: 20px;
+  font-weight: bold;
+  color: yellow;
+}
